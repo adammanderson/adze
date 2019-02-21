@@ -3,7 +3,6 @@ const rp = require('request-promise')
 const ora = require('ora')
 const { INFO } = require('../constants/log-levels')
 const log = require('../helpers/log')
-
 const { api: { authKey, endpoint } } = require('../../config')
 
 const headers = {
@@ -11,8 +10,11 @@ const headers = {
   'Content-Type': 'application/json',
 }
 
+const spinner = ora()
+
+
 const getTicketData = (ticketId) => {
-  const spinner = ora('Finding issue'.yellow).start()
+  spinner.start('Finding issue'.yellow)
 
   return rp({
     url: `${endpoint}${ticketId}`,
@@ -20,10 +22,10 @@ const getTicketData = (ticketId) => {
   })
     .then((data) => {
       const parsedData = JSON.parse(data)
-      const { issuetype, summary } = parsedData.fields
+      const { key, fields: { issuetype, summary } } = parsedData
 
       spinner.succeed('Found issue!'.green)
-      log(`Key: ${parsedData.key}`, INFO)
+      log(`Key: ${key}`, INFO)
       log(`Issue Type: ${issuetype.name}`, INFO)
       log(`Summary: ${summary}`, INFO)
 

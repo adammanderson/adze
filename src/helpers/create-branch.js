@@ -5,7 +5,7 @@ const { repo: { baseBranch } } = require('../../config')
 
 const spinner = ora()
 
-const createBranch = (branchName) => {
+const createBranch = branchName => (
   new Promise((resolve, reject) => {
     spinner.start(`Creating branch: ${branchName}`.yellow)
 
@@ -24,6 +24,6 @@ const createBranch = (branchName) => {
     .catch(() => {
       spinner.fail('It looks like that branch already exists'.red)
     })
-}
+)
 
 module.exports = createBranch
