@@ -20,7 +20,7 @@ const getTicketData = (ticketId) => {
       return JSON.parse(data)
     })
     .catch(() => {
-      spinner.succeed('Oops. Looks like that issue does not exist.')
+      spinner.fail('Oops. Looks like that issue does not exist.')
       process.exit(0)
     })
 }
