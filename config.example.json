@@ -1,7 +1,7 @@
 {
   "api": {
     "authKey": "SECRET",
-    "endpoint": "https://jira.atlassian.roh.org.uk/rest/api/latest/issue/"
+    "endpoint": "https://jira.atlassian.com/rest/api/latest/issue/"
   },
   "repo": {
     "baseBranch": "master"
