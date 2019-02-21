@@ -1,12 +1,12 @@
 #! /usr/bin/env node
-
+require('colors')
 const adze = require('commander')
-const { version } = require('../package')
+const { name, author, version } = require('../package')
 
 const jiraBranch = require('./commands/jira/branch')
 
 adze
-  .version(version)
+  .version(`${name.rainbow} by ${author.green}: ${version}`)
 
 adze
   .command('jira:branch <issueId>')

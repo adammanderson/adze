@@ -10,7 +10,7 @@
   "bin": {
     "adze": "./src/index.js"
   },
-  "author": "Adam Anderson",
+  "author": "@adammanderson",
   "contributors": [],
   "license": "ISC",
   "repository": {
