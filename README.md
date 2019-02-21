@@ -2,12 +2,17 @@
 
 ### Install
 
-`npm run init`
-Update `config.json` with your relevant api auth keys and repo details.
+`npm run init`  
+
+Update `config.json` with your relevant API and repo configuration.
 
 ### Usage
 ```
-usage: adze [<flags>] <command> [<args> ...]
+Usage: adze [options] [command]
+
+Options:
+  -v, --version          output the version number
+  -h, --help             output usage information
 
 Commands:
   jira:branch <issueId>  create branch from a JIRA issue
