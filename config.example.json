@@ -4,6 +4,6 @@
     "endpoint": "https://jira.atlassian.roh.org.uk/rest/api/latest/issue/"
   },
   "deploy": {
-    "baseBranch": "master",
+    "baseBranch": "master"
   }
 }
