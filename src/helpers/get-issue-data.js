@@ -13,11 +13,11 @@ const headers = {
 const spinner = ora()
 
 
-const getTicketData = (ticketId) => {
+const getIssueData = (issueId) => {
   spinner.start('Finding issue'.yellow)
 
   return rp({
-    url: `${endpoint}${ticketId}`,
+    url: `${endpoint}${issueId}`,
     headers,
   })
     .then((data) => {
@@ -37,4 +37,4 @@ const getTicketData = (ticketId) => {
     })
 }
 
-module.exports = getTicketData
+module.exports = getIssueData

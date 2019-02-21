@@ -3,15 +3,15 @@
 const adze = require('commander')
 const { version } = require('../package')
 
-const branch = require('./commands/branch')
+const jiraBranch = require('./commands/jira/branch')
 
 adze
   .version(version)
 
 adze
-  .command('branch <ticketId>')
+  .command('jira:branch <issueId>')
   .description('create branch from a JIRA issue')
-  .action(branch)
+  .action(jiraBranch)
 
 adze.parse(process.argv)
 

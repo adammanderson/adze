@@ -1,9 +1,9 @@
 require('colors')
-const getTicketData = require('../helpers/get-ticket-data')
-const createBranch = require('../helpers/create-branch')
+const getIssueData = require('../../helpers/get-issue-data')
+const createBranch = require('../../helpers/create-branch')
 
-function branch(ticketId) {
-  getTicketData(ticketId)
+function branch(issueId) {
+  getIssueData(issueId)
     .then((data) => {
       const { issuetype, summary } = data.fields
       const formattedIssueType = issuetype.name.replace(/-/g, '')
